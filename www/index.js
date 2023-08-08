@@ -127,9 +127,7 @@ const getIndex = (row, column) => {
 
 const drawCells = () => {
   const cellsPtr = universe.cells();
-  const cells = new Uint8Array(memory.buffer, cellsPtr, width * height);
-
-  ctx.beginPath();
+  const cells = new Uint8Array(memory.buffer, cellsPtr, width * height);  
 
   // Alive cells.
   ctx.fillStyle = ALIVE_COLOR;
@@ -166,8 +164,6 @@ const drawCells = () => {
       );
     }
   }
-
-  ctx.stroke();
 };
 
 canvas.addEventListener("click", event => {
